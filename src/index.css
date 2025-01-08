@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .bg-gradient {
+      @apply bg-gradient-to-r from-blue-500 to-purple-500;
+    }
+    
+    .text-gradient {
+      @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+    }
+    .skill-card-glow {
+        @apply hover:shadow-lg hover:shadow-current/20 transition-all duration-300;
+      }
+  }
+p,h1,h2,h3,h4,h5,h6 {
+    cursor: default;
+}
