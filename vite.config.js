@@ -18,7 +18,16 @@ export default defineConfig({
           res.setHeader('X-Frame-Options', 'DENY');
           res.setHeader('X-XSS-Protection', '1; mode=block');
           res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-          res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;");
+          // Updated CSP to allow necessary sources
+          res.setHeader(
+            'Content-Security-Policy',
+            "default-src 'self'; " +
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+            "img-src 'self' data: https:; " +
+            "font-src 'self' https://fonts.gstatic.com; " +
+            "connect-src 'self';"
+          );
           next();
         });
       }
@@ -29,7 +38,8 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       output: {
-
+        // Add source map for better debugging
+        sourcemap: true,
       },
     },
   },
