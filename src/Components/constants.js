@@ -22,6 +22,26 @@ const projects = [
     link: sanitizeURL("https://super-fit.vercel.app/")
   },
   {
+    title: "Gemini Clone",
+    description: "A clone of Google's Gemini AI chat interface with similar functionality and features.",
+    shortDescription: "AI Powered Chat Assistant",
+    image: {
+      src: "/Media/gemini-preview.jpg",
+    },
+    tech: ["React", "Gemini API integration" ],
+    link: sanitizeURL("https://gemini-clone-jeevintha.vercel.appgi/")
+  },
+  {
+    title: "Weather Man",
+    description: "A weather application that provides real-time weather updates and forecasts for any location.",
+    shortDescription: "Real-time Weather Updates",
+    image: {
+      src: "/Media/weather-preview.jpg",
+    },
+    tech: ["React", "OpenWeather API integration", ],
+    link: sanitizeURL("https://weather-app-jeevintha.vercel.app/")
+  },
+  {
     title: "Jeevizon",
     description: "An interactive E-commerce platform where you can sign up and view products",
     shortDescription: "Interactive E-commerce platform",

@@ -10,8 +10,6 @@ const Contact = lazy(() => import('./Components/Contact'));
 
 import Stars from "./Components/Stars";
 
-
-
 function App() {
   return (
 
