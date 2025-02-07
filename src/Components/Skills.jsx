@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaPython,FaSass  } from "react-icons/fa";
-import { SiTailwindcss, SiBootstrap,SiJquery,SiFigma, SiMicrosoftoffice } from "react-icons/si";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaPython } from "react-icons/fa";
+import { SiTailwindcss, SiBootstrap,SiMicrosoftoffice } from "react-icons/si";
 import { MdDesignServices } from "react-icons/md";
-import { VscFileCode } from "react-icons/vsc";
 import { useState } from "react";
 
 
@@ -30,9 +29,7 @@ const skillCategories = [
       { name: "CSS", icon: <FaCss3Alt className="text-[#1572B6]" /> },
       { name: "JavaScript", icon: <FaJs className="text-[#F7DF1E]" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-      { name: "Python", icon: <FaPython className="text-[#3776AB]" /> },
-      { name: "jQuery", icon: <SiJquery className="text-[#0769AD]" /> },
-      { name: "SASS", icon: <FaSass className="text-[#CC6699]" /> },
+      { name: "Python", icon: <FaPython className="text-[#3776AB]" /> }
     ]
   },
   {
@@ -42,9 +39,7 @@ const skillCategories = [
       { name: "Vercel", icon: <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAZ0lEQVR4AWMYwkBICI/krCm45eQ/ftfCKbnp//9FuOTsfv3//98Fh+TB/0BwELtc8H8wiMMqeRUieRWbXPF/KCjGIvkYJvkYU27KfzjoxAi4jwjJ7/KY/keA1ahy3E2dSKCJm2FEAQAD1l2xzdeQ1AAAAABJRU5ErkJggg==" alt="Vercel" className="w-8 h-8" /> },
       { name: "Git", icon: <FaGitAlt className="text-[#F05032]" /> },
       { name: "UI/UX Design", icon: <MdDesignServices className="text-yellow-400" /> },
-      { name: "VS Code", icon: <VscFileCode className="text-blue-600" /> },
       { name: "GitHub", icon: <FaGithub className="text-white" /> },
-      { name: "Figma", icon: <SiFigma className="text-green-600" /> },
       { name: "MS Office", icon: <SiMicrosoftoffice className="text-[#D83B01]" /> }
     ]
   }

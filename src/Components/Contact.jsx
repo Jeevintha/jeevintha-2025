@@ -62,8 +62,8 @@ export default function Contact() {
               ))}
             </div>
           <motion.a
-            href="/Jeevintha-cv.pdf"
-            download="Jeevintha-cv.pdf"
+            href="/Jeevintha-frontend-developer-cv.pdf"
+            download="Jeevintha-frontend-developer-cv.pdf"
             className="mt-8 group relative inline-flex items-center gap-2 px-6 py-3 text-lg md:text-xl bg-white/10 rounded-full text-white hover:shadow-md hover:bg-white/20 transition-all duration-100"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

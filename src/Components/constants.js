@@ -29,7 +29,7 @@ const projects = [
       src: "/Media/gemini-preview.jpg",
     },
     tech: ["React", "Gemini API integration" ],
-    link: sanitizeURL("https://gemini-clone-jeevintha.vercel.appgi/")
+    link: sanitizeURL("https://gemini-clone-jeevintha.vercel.app/")
   },
   {
     title: "Weather Man",
