@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
 
-
 const About = () => {
-  
   return (
     <div id="about" className="text-white min-h-screen flex items-center justify-center p-8">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
         <motion.div
           initial={{ opacity: 0, x: -90 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -15,7 +12,7 @@ const About = () => {
         >
           <div className="bg-gradient-to-tr from-blue-500 to-purple-500 rounded-2xl p-1">
             <img
-              src="/girl.webp"
+              src="/flower.jpg"
               alt="Jeevintha"
               className="rounded-2xl object-cover w-full h-full"
             />
@@ -34,23 +31,26 @@ const About = () => {
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed">
-            I'm a frontend React developer who turns coffee ☕ into code and dreams into interfaces. When I'm not crafting pixel-perfect components, you'll find me debugging with the patience of a zen master 🧘‍♂️.
+            I'm a passionate full stack developer, building end-to-end web solutions.<br/> I love bringing ideas to life through code 💻.<br/> You'll find me solving complex problems with elegant solutions 🎯.
           </p>
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-purple-400">What I bring to the table:</h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center gap-2">
-                🚀 <span>React.js expert with a passion for clean code</span>
+                🚀 <span>Full stack expertise in MERN (MongoDB, Express.js, React.js, Node.js)</span>
               </li>
               <li className="flex items-center gap-2">
-                💡 <span>Problem solver who loves tackling complex challenges</span>
+                ⚡ <span>Experience in building scalable APIs and microservices</span>
               </li>
               <li className="flex items-center gap-2">
-                🎨 <span>UI/UX enthusiast with an eye for design</span>
+                🎨 <span>Strong frontend skills with modern UI/UX principles</span>
               </li>
               <li className="flex items-center gap-2">
-                🤝 <span>Team player who brings positive energy to projects</span>
+                🛠️ <span>Database design and optimization specialist</span>
+              </li>
+              <li className="flex items-center gap-2">
+                🤝 <span>Collaborative team player with excellent communication skills</span>
               </li>
             </ul>
           </div>
@@ -62,17 +62,15 @@ const About = () => {
               className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full font-medium"
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
             >
-              Let's Build Something Cool! 🚀
+              Let's Create Something Amazing! 🚀
             </motion.button>
           </div>
 
           <p className="text-sm text-gray-400 italic">
-            "The only way to do great work is to love what you do" - Steve Jobs
+            "Innovation distinguishes between a leader and a follower" - Steve Jobs
           </p>
         </motion.div>
       </div>
-
-      
     </div>
   );
 };

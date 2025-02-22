@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaPython } from "react-icons/fa";
-import { SiTailwindcss, SiBootstrap,SiMicrosoftoffice } from "react-icons/si";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaPython, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiBootstrap, SiMicrosoftoffice, SiExpress, SiMongodb, SiPostman, SiAxios } from "react-icons/si";
 import { MdDesignServices } from "react-icons/md";
+import { TbBrandVscode } from "react-icons/tb";
+import { SiVercel, SiNetlify, SiFramer, SiJsonwebtokens } from "react-icons/si";
 import { useState } from "react";
-
-
 
 const CertificateModal = ({ isOpen, onClose, src }) => {
   if (!isOpen) return null;
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center  justify-center bg-black/80"
+      className="fixed inset-0 z-50 flex items-center  justify-center bg-black/0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       onClick={onClose}
@@ -24,71 +24,130 @@ const skillCategories = [
   {
     title: "Frontend Development",
     skills: [
-      { name: "React Js", icon: <FaReact className="text-[#61DAFB]" /> },
-      { name: "HTML", icon: <FaHtml5 className="text-[#E34F26]" /> },
-      { name: "CSS", icon: <FaCss3Alt className="text-[#1572B6]" /> },
+      { name: "React.js", icon: <FaReact className="text-[#61DAFB]" /> },
       { name: "JavaScript", icon: <FaJs className="text-[#F7DF1E]" /> },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-      { name: "Python", icon: <FaPython className="text-[#3776AB]" /> }
+      { name: "HTML", icon: <FaHtml5 className="text-[#E34F26]" /> },
+      { name: "CSS", icon: <FaCss3Alt className="text-[#1572B6]" /> },
+      { name: "Bootstrap", icon: <SiBootstrap className="text-[#7952B3]" /> },
+      { name: "Framer Motion", icon: <SiFramer className="text-[#0055FF]" /> }
     ]
   },
   {
-    title: "UI Frameworks and Tools",
+    title: "Backend Development",
     skills: [
-      { name: "Bootstrap", icon: <SiBootstrap className="text-[#7952B3]" /> },
-      { name: "Vercel", icon: <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAAZ0lEQVR4AWMYwkBICI/krCm45eQ/ftfCKbnp//9FuOTsfv3//98Fh+TB/0BwELtc8H8wiMMqeRUieRWbXPF/KCjGIvkYJvkYU27KfzjoxAi4jwjJ7/KY/keA1ahy3E2dSKCJm2FEAQAD1l2xzdeQ1AAAAABJRU5ErkJggg==" alt="Vercel" className="w-8 h-8" /> },
-      { name: "Git", icon: <FaGitAlt className="text-[#F05032]" /> },
-      { name: "UI/UX Design", icon: <MdDesignServices className="text-yellow-400" /> },
+      { name: "Node.js", icon: <FaNodeJs className="text-[#8CC84B]" /> },
+      { name: "Express.js", icon: <SiExpress className="text-[#ffffff]" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+      { name: "JWT", icon: <SiJsonwebtokens className="text-[#383838] dark:text-[#ffffff]" /> },
+      { name: "Python", icon: <FaPython className="text-[#3776AB]" /> },
+      { name: "RESTful APIs", icon: <MdDesignServices className="text-[#FF5733]" /> },
+      { name: "Axios", icon: <SiAxios className="text-[#5A29E3]" /> }
+    ]
+  },
+  {
+    title: "Dev Tools",
+    skills: [
+      { name: "Version Control", icon: <FaGitAlt className="text-[#F05032]" /> },
+      { name: "VS Code", icon: <TbBrandVscode className="text-[#007ACC]" /> },
       { name: "GitHub", icon: <FaGithub className="text-white" /> },
-      { name: "MS Office", icon: <SiMicrosoftoffice className="text-[#D83B01]" /> }
+      { name: "Vercel", icon: <SiVercel className="text-white" /> },
+      { name: "Netlify", icon: <SiNetlify className="text-[#00C7B7]" /> },
+      { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> }
     ]
   }
 ];
+
+const SkillCard = ({ skill }) => (
+  <motion.div
+    whileHover={{ y: -5, scale: 1.01 }}
+    className="relative group"
+  >
+    <div className="relative flex items-center p-6 bg-zinc-900/50 backdrop-blur-sm rounded-lg border border-zinc-800/50 group-hover:border-white/10 transition-all duration-300">
+      {/* Icon with subtle animation */}
+      <motion.div
+        animate={{ y: [-1, 1, -1] }}
+        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+        className="relative mr-4"
+      >
+        <div className="text-4xl text-white/70 group-hover:text-white transition-colors duration-300">
+          {skill.icon}
+        </div>
+      </motion.div>
+
+      {/* Skill name with subtle hover effect */}
+      <h4 className="text-base font-medium text-zinc-400 group-hover:text-white transition-colors duration-300">
+        {skill.name}
+      </h4>
+    </div>
+  </motion.div>
+);
+
+const CategorySection = ({ category }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    className="relative"
+  >
+    <div className="mb-8">
+      <h3 className="text-2xl font-medium text-white/80">
+        {category.title}
+      </h3>
+      <div className="mt-2 h-px w-16 bg-white/10" />
+    </div>
+
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+    >
+      {category.skills.map((skill, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <SkillCard skill={skill} />
+        </motion.div>
+      ))}
+    </motion.div>
+  </motion.div>
+);
 
 export default function Skills() {
   const [selectedCert, setSelectedCert] = useState(null);
   
   return (
-    <div id="skills" className="relative min-h-screen w-full bg-black py-20 px-4">
-      <div className="max-w-6xl mx-auto space-y-20">
-     
+    <div id="skills" className="relative min-h-screen w-full  py-20 px-4">
+
+      <div className="max-w-6xl mx-auto space-y-20 relative">
+        {/* Title Section */}
         <div>
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
           >
             Technical Expertise
+            <motion.span
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            />
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Skills Grid */}
+          <div className="space-y-16">
             {skillCategories.map((category, idx) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.2 }}
-                className="p-6 rounded-2xl bg-gradient-to-br from-gray-900 to-black border border-gray-800"
               >
-                <h3 className="text-xl md:text-2xl font-semibold mb-6 text-gray-200">
-                  {category.title}
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {category.skills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex flex-col items-center p-4 rounded-xl bg-black/50 backdrop-blur-sm border border-gray-800 hover:bg-gray-900 hover:border-gray-700 transition-all duration-300"
-                    >
-                      <div className="text-4xl md:text-5xl mb-3 transition-transform duration-300 hover:scale-110">
-                        {skill.icon}
-                      </div>
-                      <span className="text-sm md:text-base text-gray-300">
-                        {skill.name}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
+                <CategorySection category={category} />
               </motion.div>
             ))}
           </div>
@@ -99,7 +158,7 @@ export default function Skills() {
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-2xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+            className="text-2xl font-bold text-center mb-12 bg-clip-text text-transparent"
           >
             Certifications
           </motion.h3>

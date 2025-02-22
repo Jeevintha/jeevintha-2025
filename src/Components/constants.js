@@ -10,7 +10,18 @@ const sanitizeURL = (url) => {
   }
 };
 
+
 const projects = [
+  {
+    title: "MealMesh",
+    description: "A full-stack MERN application for coordinating meal donations between restaurants, organizations.",
+    shortDescription: "Food Donation Network Platform",
+    image: {
+      src: "/Media/mealmesh.jpg",
+    },
+    tech: ["MongoDB", "Express.js", "React", "Node.js"],
+    link: sanitizeURL("https://mealmesh.vercel.app/")
+  },
   {
     title: "Super Fit",
     description: "A fitness app that helps you track your workouts, improvements and stay motivated.",
